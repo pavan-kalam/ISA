@@ -1,0 +1,197 @@
+/* Dashboard.css */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #34495e;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    padding: 40px;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+  
+  .error-message {
+    background-color: #fee;
+    border-left: 4px solid #e74c3c;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  
+  .error-message button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Summary Cards */
+  .summary-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .summary-card {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .summary-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #2c3e50;
+  }
+  
+  .summary-breakdown {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  .risk-indicator {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  /* Dashboard details */
+  .dashboard-details {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .filter-container select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+  }
+  
+  .dashboard-section {
+    margin-bottom: 30px;
+  }
+  
+  .analysis-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .data-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .data-list li {
+    padding: 12px 15px;
+    border-left: 4px solid #3498db;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  /* Threat log styling */
+  .threat-malware {
+    border-left-color: #e74c3c !important;
+  }
+  
+  .threat-phishing {
+    border-left-color: #f39c12 !important;
+  }
+  
+  .threat-ip {
+    border-left-color: #3498db !important;
+  }
+  
+  /* Risk score styling */
+  .risk-high {
+    border-left-color: #e74c3c !important;
+  }
+  
+  .risk-medium {
+    border-left-color: #f39c12 !important;
+  }
+  
+  .risk-low {
+    border-left-color: #2ecc71 !important;
+  }
+  
+  /* Risk meter */
+  .risk-meter {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+    gap: 5px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+  }
+  
+  .risk-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s ease;
+  }
+  
+  /* Alert styling */
+  .alert-login {
+    border-left-color: #9b59b6 !important;
+  }
+  
+  .alert-malware {
+    border-left-color: #e74c3c !important;
+  }
+  
+  .alert-traffic {
+    border-left-color: #f39c12 !important;
+  }
+  
+  .alert-other {
+    border-left-color: #3498db !important;
+  }
+  
+  .alert-time {
+    float: right;
+    color: #7f8c8d;
+    font-size: 0.9em;
+  }
