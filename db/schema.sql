@@ -1,5 +1,13 @@
 -- db/schema.sql
 
+-- Create table for users
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Create table for assets
 CREATE TABLE assets (
     id SERIAL PRIMARY KEY,
