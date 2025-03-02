@@ -15,7 +15,7 @@ function Shodan() {
         const response = await fetch(`http://localhost:5001/api/shodan?query=${encodeURIComponent(query)}`, {
             method: 'GET',
             headers: {
-                'API-Key': 'API_KEYS.shodan', // Replace with your actual API key
+                'API-Key': API_KEYS.shodan, // Replace with your actual API key
             },
         });
 

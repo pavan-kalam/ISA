@@ -15,7 +15,7 @@ function AbuseIPDB() {
         const response = await fetch(`http://localhost:5001/api/abuseipdb?ip_address=${encodeURIComponent(ip)}`, {
             method: 'GET',
             headers: {
-                'API-Key': 'API_KEYS.abuseipdb', // Replace with your actual API key
+                'API-Key': API_KEYS.abuseipdb, // Replace with your actual API key
             },
         });
 
