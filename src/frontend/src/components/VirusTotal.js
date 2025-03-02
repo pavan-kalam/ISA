@@ -15,7 +15,7 @@ function VirusTotal() {
         const response = await fetch(`http://localhost:5001/api/virustotal?url=${encodeURIComponent(url)}`, {
             method: 'GET',
             headers: {
-                'API-Key': 'API_KEYS.virustotal', // Replace with your actual API key
+                'API-Key': API_KEYS.virustotal, // Replace with your actual API key
             },
         });
 
