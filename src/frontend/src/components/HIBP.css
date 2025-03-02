@@ -1,0 +1,114 @@
+/* src/frontend/src/components/HIBP.css */
+.hibp-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hibp-container h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+  }
+  
+  .hibp-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .hibp-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .hibp-button {
+    background-color: #4a6ee0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .hibp-button:hover {
+    background-color: #3a5bd0;
+  }
+  
+  .hibp-button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+  }
+  
+  .hibp-loading {
+    margin: 15px 0;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .hibp-error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    border-left: 4px solid #c62828;
+  }
+  
+  .hibp-result {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+  
+  .hibp-result h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .hibp-found {
+    color: #d32f2f;
+    font-weight: 500;
+  }
+  
+  .hibp-not-found {
+    color: #388e3c;
+    font-weight: 500;
+  }
+  
+  .hibp-breach-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+  
+  .hibp-breach-item {
+    background-color: #f5f5f5;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #f44336;
+  }
+  
+  .hibp-breach-item strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .hibp-breach-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
