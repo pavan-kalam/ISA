@@ -1,5 +1,6 @@
 // src/frontend/src/components/AbuseIPDB.js
 import React, { useState } from 'react';
+import API_KEYS from './config.js';
 
 function AbuseIPDB() {
     const [ip, setIp] = useState('');
@@ -14,7 +15,7 @@ function AbuseIPDB() {
         const response = await fetch(`http://localhost:5001/api/abuseipdb?ip_address=${encodeURIComponent(ip)}`, {
             method: 'GET',
             headers: {
-                'API-Key': 'c4e131e49721c5dd6cdb5e0660aaf2e972fae788f172b67b6122fa91f959d7223adc8d1251ed1e7d', // Replace with your actual API key
+                'API-Key': 'API_KEYS.abuseipdb', // Replace with your actual API key
             },
         });
 

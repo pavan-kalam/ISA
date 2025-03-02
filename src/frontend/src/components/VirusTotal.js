@@ -1,5 +1,6 @@
 // src/frontend/src/components/VirusTotal.js
 import React, { useState } from 'react';
+import API_KEYS from './config.js';
 
 function VirusTotal() {
     const [url, setUrl] = useState('');
@@ -14,7 +15,7 @@ function VirusTotal() {
         const response = await fetch(`http://localhost:5001/api/virustotal?url=${encodeURIComponent(url)}`, {
             method: 'GET',
             headers: {
-                'API-Key': '4f931f13f341ec0f9a2089984b43523a98dfa79689b8117e7449196afbdec9f', // Replace with your actual API key
+                'API-Key': 'API_KEYS.virustotal', // Replace with your actual API key
             },
         });
 

@@ -1,5 +1,6 @@
 // src/frontend/src/components/Shodan.js
 import React, { useState } from 'react';
+import API_KEYS from './config.js';
 
 function Shodan() {
     const [query, setQuery] = useState('');
@@ -14,7 +15,7 @@ function Shodan() {
         const response = await fetch(`http://localhost:5001/api/shodan?query=${encodeURIComponent(query)}`, {
             method: 'GET',
             headers: {
-                'API-Key': 'dfhwfkMbOVzPFxUJvxa8Yn6qMCxOvqBD', // Replace with your actual API key
+                'API-Key': 'API_KEYS.shodan', // Replace with your actual API key
             },
         });
 
