@@ -269,6 +269,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://shopsmart:123456789@localh
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
+
 # User Registration
 @app.route('/api/register', methods=['POST'])
 def register():
@@ -321,7 +322,7 @@ def get_virustotal_data():
     url = request.args.get('url')
     # Fix the API key handling
     api_key = request.headers.get('API-Key', '4f931f13f341ec0f9a2089984b43523a98dfa79689b8117e7449196afbdec9f')
-    
+    #api_key = config.get('VIRUSTOTAL_API_KEY')
     if not url:
         return jsonify({"error": "URL is required"}), 400
     
@@ -342,7 +343,8 @@ def get_abuseipdb_data():
     ip_address = request.args.get('ip_address')
     # Fix the API key handling
     api_key = request.headers.get('API-Key', 'c4e131e49721c5dd6cdb5e0660aaf2e972fae788f172b67b6122fa91f959d7223adc8d1251ed1e7d')
-    
+    #api_key = config.get('ABUSEIPDB_API_KEY')
+
     if not ip_address:
         return jsonify({"error": "IP address is required"}), 400
     
@@ -354,6 +356,7 @@ def get_abuseipdb_data():
 def get_shodan_data():
     query = request.args.get('query')
     api_key = request.headers.get('API-Key')  # Ensure you pass your Shodan API key in the headers
+    #api_key = config.get('SHODAN_API_KEY')
 
     if not query:
         return jsonify({"error": "Query is required"}), 400
