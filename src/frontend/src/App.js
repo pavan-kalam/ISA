@@ -63,9 +63,11 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
-import Register from './components/Register'; // Import the Register component
+import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import ThreatDashboard from './components/ThreatDashboard';
 import Navbar from './components/Navbar';
+
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -86,6 +88,7 @@ function App() {
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
                 <Route path="/register" element={<Register />} /> {/* Add the Register route */}
                 <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
+                <Route path="/threat-dashboard" element={isAuthenticated ? <ThreatDashboard /> : <Navigate to="/login" />} />
             </Routes>
         </Router>
     );

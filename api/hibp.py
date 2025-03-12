@@ -1,10 +1,10 @@
 # api/hibp.py
 import requests
 
-def check_email_breach(email):
-    url = f'https://haveibeenpwned.com/api/v3/breachedaccount/{email}'
+def check_email_breach_intelx(email, api_key):
+    url = f'https://free.intelx.io/api/v1/breach?email={email}'
     headers = {
-        'User -Agent': 'YourAppName'
+        'Authorization': f'Bearer {api_key}'
     }
     response = requests.get(url, headers=headers)
     return response.json() if response.status_code == 200 else None

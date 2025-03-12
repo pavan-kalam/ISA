@@ -1,9 +1,9 @@
 # api/virustotal.py
 import requests
 
-def fetch_virustotal_data(api_key, url):
+def fetch_urlscan_data(api_key, url):
     headers = {
-        'x-apikey': api_key
+        'Authorization': f'Bearer {api_key}'
     }
-    response = requests.get(f'https://www.virustotal.com/api/v3/urls/{url}', headers=headers)
+    response = requests.get(f'https://urlscan.io/api/v1/scan/', headers=headers, json={"url": url})
     return response.json()
