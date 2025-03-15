@@ -2637,3 +2637,413 @@
 2025-03-12 11:59:55,718 - osint_fetcher - INFO - Processed threats from URLScan
 2025-03-12 11:59:55,718 - osint_fetcher - INFO - OSINT data fetched: {'events': [{'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}]}
 2025-03-12 11:59:55,719 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 11:59:55] "GET /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 12:37:11,039 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/real-time-threat-intelligence/api/fetch_osint.py', reloading
+2025-03-12 12:37:11,692 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 13:09:50,234 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.168.106.16:5001
+2025-03-12 13:09:50,235 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-12 13:09:50,235 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 13:09:53,320 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 13:09:53,362 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 13:39:02,906 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.168.106.16:5001
+2025-03-12 13:39:02,909 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-12 13:39:02,909 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 13:39:06,203 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 13:39:06,215 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 13:40:06,833 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 13:40:06,945 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 13:40:06,963 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/threat-logs HTTP/1.1" 200 -
+2025-03-12 13:40:06,966 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:40:06,968 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 13:40:06,968 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:40:06,983 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/threat-logs HTTP/1.1" 200 -
+2025-03-12 13:40:06,983 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:40:06,985 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:40:06,985 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:40:06,985 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:40:06,987 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:06] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:40:06,989 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:40:08,600 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:08,600 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:08,600 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:08,600 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:09,829 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:09,829 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:09,829 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:09,829 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:10,877 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:10,877 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:10,891 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:10,891 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:11,876 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:11,877 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:11,877 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:11,877 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:12,069 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:12,069 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:12,096 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:12,096 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:12,229 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:12,230 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:12,243 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:12,243 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:20,148 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:20,149 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:27,001 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:40:27,002 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 13:40:27,002 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:40:27,921 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:27,959 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:28,103 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:28,103 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:28,115 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:28,115 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:29,113 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:29,113 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:29,113 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:29,113 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:30,220 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:30,220 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:30,240 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:30,240 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:31,170 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:31,170 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:31,180 - osint_fetcher - ERROR - Error from ZoomEye: Failed to fetch data
+2025-03-12 13:40:31,181 - osint_fetcher - INFO - Processed threats from ZoomEye
+2025-03-12 13:40:31,298 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:31,298 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:31,317 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:31,317 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:31,444 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:31,444 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:31,449 - osint_fetcher - WARNING - Expected a dictionary but got a str: data
+2025-03-12 13:40:31,449 - osint_fetcher - INFO - Processed threats from AbuseIPDB
+2025-03-12 13:40:35,784 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:35,821 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:36,253 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:36,253 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:36,682 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:36,683 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:36,684 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:36] "GET /api/threat-logs HTTP/1.1" 200 -
+2025-03-12 13:40:36,744 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:36,745 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:37,154 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:37,155 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:37,155 - osint_fetcher - INFO - OSINT data fetched: {'events': [{'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}]}
+2025-03-12 13:40:37,155 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:37] "GET /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:40:39,206 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:39,297 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:47,061 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:47,104 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:54,896 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:54,925 - osint_fetcher - WARNING - No data received from IntelX, using default data.
+2025-03-12 13:40:55,322 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:55,323 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:55,358 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:55,358 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:55,754 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:55,755 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:55,756 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:55] "GET /api/threat-logs HTTP/1.1" 200 -
+2025-03-12 13:40:55,787 - osint_fetcher - ERROR - Error from URLScan: Not Found
+2025-03-12 13:40:55,787 - osint_fetcher - INFO - Processed threats from URLScan
+2025-03-12 13:40:55,787 - osint_fetcher - INFO - OSINT data fetched: {'events': [{'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from ZoomEye', 'risk': 'low'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}, {'description': 'Default threat description from IntelX', 'risk': 'high'}]}
+2025-03-12 13:40:55,788 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:40:55] "GET /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:47:49,045 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/api/fetch_osint.py', reloading
+2025-03-12 13:47:49,679 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 13:57:18,444 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.168.106.16:5001
+2025-03-12 13:57:18,445 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-12 13:57:18,446 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 13:57:22,288 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 13:57:22,303 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 13:57:45,765 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 13:57:45,877 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 13:57:45,891 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:57:45,895 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:57:45,902 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 13:57:45,902 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:57:45,905 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 13:57:45,905 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:57:45,905 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 13:57:45,906 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:57:45,906 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:57:45,906 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,906 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,907 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,907 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,907 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,908 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,908 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,908 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,908 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 13:57:45,908 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 13:57:45,910 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:57:45,911 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,911 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,911 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,911 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:57:45,911 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 13:57:45,912 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:57:45] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 13:58:47,476 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 13:58:47,584 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 13:58:47,598 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:58:47,599 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 13:58:47,599 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 13:58:47,600 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:58:47,602 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 13:58:47,604 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:58:47,604 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 13:58:47,604 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:58:47,605 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,605 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,606 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,606 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,606 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,606 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,606 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,606 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,606 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 13:58:47,607 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 13:58:47,609 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 13:58:47,609 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 13:58:47,609 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,609 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,609 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,609 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,610 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,610 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,610 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 13:58:47,610 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 13:58:47,610 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 13:58:47,610 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 13:58:47,649 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 13:58:47,652 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 13:58:47] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:00:34,163 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/api/spiderfoot.py', reloading
+2025-03-12 14:00:34,786 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:00:39,139 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:00:39,153 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:01:30,231 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 14:01:30,341 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 14:01:30,354 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:01:30,357 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:01:30,360 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:01:30,364 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:01:30,364 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:01:30,365 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:01:30,369 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:01:30,370 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:01:30,371 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:01:30,371 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,371 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,371 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,371 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,371 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,371 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,371 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,371 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,371 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:01:30,372 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:01:30,372 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:01:30,375 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:01:30,375 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:01:30,376 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,378 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,378 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,378 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,378 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,378 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,378 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:01:30,378 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:01:30,378 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:01:30,379 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:01:30] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:03:51,289 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 14:03:51,399 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 14:03:51,414 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:03:51,414 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:03:51,415 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:03:51,415 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:03:51,417 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:03:51,418 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:03:51,419 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:03:51,419 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:03:51,420 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,420 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,421 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,421 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,421 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,421 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,421 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,421 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,421 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:03:51,422 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:03:51,425 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:03:51,426 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:03:51,426 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,426 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,426 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,426 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,426 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,426 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,426 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:03:51,426 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:03:51,426 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:03:51,426 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:03:51,483 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:03:51,486 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:03:51] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:04:31,584 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:04:32,234 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:04:36,829 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:04:36,842 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:04:47,873 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:47] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 14:04:47,983 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:47] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 14:04:47,998 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:47] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:04:48,001 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:04:48,008 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:04:48,009 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:04:48,010 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:04:48,011 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:04:48,012 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:04:48,014 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:04:48,015 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:04:48,016 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,016 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,016 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,016 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,016 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,016 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,016 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,016 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,016 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:04:48,016 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:04:48,018 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:04:48,019 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:04:48,019 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:04:48,019 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,020 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,020 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,020 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,020 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,020 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,020 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:04:48,020 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:04:48,020 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:04:48,020 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:04:48] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:05:58,657 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:05:59,127 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:06:03,035 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:06:03,055 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:07:26,122 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:07:26,667 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:07:30,319 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:07:30,333 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:08:14,551 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:08:15,052 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:08:18,603 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:08:18,619 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:10:00,266 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:10:00,752 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:10:04,650 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:10:04,665 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:11:08,813 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.168.106.16:5001
+2025-03-12 14:11:08,813 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-12 14:11:08,814 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:11:12,174 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:11:12,190 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:11:25,588 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 14:11:25,680 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 14:11:25,696 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:11:25,699 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:11:25,699 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:11:25,699 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,699 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,699 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,699 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,699 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,699 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,699 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,699 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,700 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:11:25,700 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:11:25,708 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:11:25,708 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:11:25,709 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:11:25,710 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:11:25,710 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:11:25,710 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:11:25,715 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,715 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,715 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,715 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:11:25,715 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:11:25,715 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:11:25,716 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:11:25] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:13:36,738 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:13:37,374 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:13:41,398 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:13:41,408 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:14:06,748 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.168.106.16:5001
+2025-03-12 14:14:06,748 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-12 14:14:06,749 - werkzeug - INFO -  * Restarting with stat
+2025-03-12 14:14:10,520 - werkzeug - WARNING -  * Debugger is active!
+2025-03-12 14:14:10,534 - werkzeug - INFO -  * Debugger PIN: 758-606-702
+2025-03-12 14:14:16,199 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "OPTIONS /api/login HTTP/1.1" 200 -
+2025-03-12 14:14:16,309 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "POST /api/login HTTP/1.1" 200 -
+2025-03-12 14:14:16,319 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:14:16,322 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:14:16,325 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:14:16,326 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:14:16,326 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,326 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,326 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,326 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,326 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,326 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,326 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,326 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,326 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:14:16,327 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:14:16,332 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:14:16,333 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "OPTIONS /api/risk-scores HTTP/1.1" 200 -
+2025-03-12 14:14:16,334 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "[33mOPTIONS /api/spiderfoot/threat-logs HTTP/1.1[0m" 404 -
+2025-03-12 14:14:16,336 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "OPTIONS /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:14:16,346 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:14:16,345 - osint_fetcher - INFO - Fetching risk scores...
+2025-03-12 14:14:16,346 - osint_fetcher - INFO - Starting OSINT data fetch...
+2025-03-12 14:14:16,346 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,346 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,346 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,346 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,346 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,346 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,346 - osint_fetcher - ERROR - Spiderfoot API key not configured
+2025-03-12 14:14:16,347 - osint_fetcher - INFO - Processed threats from Spiderfoot
+2025-03-12 14:14:16,347 - osint_fetcher - INFO - OSINT data fetched: {'events': []}
+2025-03-12 14:14:16,347 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "[31m[1mGET /api/risk-scores HTTP/1.1[0m" 400 -
+2025-03-12 14:14:16,348 - werkzeug - INFO - 127.0.0.1 - - [12/Mar/2025 14:14:16] "GET /api/real-time-alerts HTTP/1.1" 200 -
+2025-03-12 14:14:58,085 - werkzeug - INFO -  * Detected change in '/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py', reloading
+2025-03-12 14:14:58,747 - werkzeug - INFO -  * Restarting with stat

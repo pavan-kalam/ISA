@@ -13,7 +13,7 @@ function ThreatDashboard() {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`http://localhost:5001/api/${api}`);
+            const response = await fetch(`http://localhost:5002/api/${api}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }

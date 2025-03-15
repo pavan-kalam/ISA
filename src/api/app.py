@@ -1,14 +1,14 @@
-# api/app.py
 from flask import Flask, jsonify, request
+import logging
 from api.logger import logger  # Import logger
-from flask import Flask, jsonify, request
-from api.logger import logger  # Import logger
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
 
 from flask_sqlalchemy import SQLAlchemy
-from api.fetch_osint import fetch_osint_data, fetch_intelx_intelligence, fetch_zoomeye_intelligence
+from api.fetch_osint import fetch_osint_data  # Removed unused imports
+from src.risk_analysis import analyze_risk
 
-
-from ..risk_analysis import analyze_risk  # Updated to relative import
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from api.models import db, User  # Import the User model
@@ -16,16 +16,16 @@ import datetime
 import random
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})  # Enable CORS for all routes
 
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})  
-
-@app.after_request
-def add_cors_headers(response):
+@app.route('/api/*', methods=['OPTIONS'])
+def handle_options():
+    response = jsonify({})
     response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS')
     return response
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://shopsmart:123456789@localhost:5432/shopsmart'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -88,16 +88,20 @@ def check_ip_abuse_route():
     result = check_ip_abuse(api_key, ip_address)
     return jsonify(result)
 
-@app.route('/api/threat-logs', methods=['GET'])
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('static/favicon.ico')
+
+@app.route('/api/spiderfoot/threat-logs', methods=['GET'])
 def get_threat_logs():
     try:
         # Fetch OSINT data and analyze risk
         osint_data = fetch_osint_data()
         if not isinstance(osint_data, dict) or 'events' not in osint_data:
-            logger.error("Invalid OSINT data structure received.")
+            logger.error("Invalid OSINT data structure received from Spiderfoot.")  # Log error for invalid OSINT data
             return jsonify({"error": "Invalid OSINT data structure."}), 500
-        risk_analysis = analyze_risk(osint_data['events'])  # Pass only the events for risk analysis
 
+        risk_analysis = analyze_risk(osint_data['events'])  # Pass only the events for risk analysis
         
         # Combine OSINT data with risk analysis
         threat_logs = [
@@ -106,6 +110,7 @@ def get_threat_logs():
         ]
         return jsonify(threat_logs)
     except Exception as e:
+        logger.error(f"Failed to fetch threat logs: {str(e)}")  # Log the error
         return jsonify({"error": f"Failed to fetch threat logs: {str(e)}"}), 500
 
 @app.route('/api/risk-scores', methods=['GET'])
@@ -117,8 +122,8 @@ def get_risk_scores():
     threat_descriptions = [event["description"] for event in osint_data.get("events", []) if event.get("description")]
     
     if not threat_descriptions:
-        return jsonify({"error": "No valid threat descriptions found"}), 400
-    
+        return jsonify({"message": "No valid threat descriptions found, using default data."}), 200
+
     risk_scores = analyze_risk(threat_descriptions)
     return jsonify(risk_scores)
 
@@ -144,4 +149,5 @@ if __name__ == '__main__':
     def create_tables():
         db.create_all()  # Create tables
 
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5002)  # Changed port to 5002
+    logger.info("Application is running on port 5002")  # Log application start

@@ -3,16 +3,15 @@ import './Dashboard.css'; // You'll need to create this CSS file
 
 function Dashboard() {
   const [threatLogs, setThreatLogs] = useState([]);
-  const [riskScores, setRiskScores] = useState([]);
-  const [realTimeAlerts, setRealTimeAlerts] = useState([]);
-  const [selectedThreat, setSelectedThreat] = useState('All');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  
-  // Analytics states
-  const [threatCategories, setThreatCategories] = useState({});
+  const [riskScores] = useState([75, 85, 90]); // Example hardcoded risk scores
   const [averageRiskScore, setAverageRiskScore] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [realTimeAlerts, setRealTimeAlerts] = useState([]);
+  const [threatCategories, setThreatCategories] = useState({});
+  const [selectedThreat, setSelectedThreat] = useState('All');
   const [highRiskCount, setHighRiskCount] = useState(0);
+
   const [alertsByType, setAlertsByType] = useState({});
 
   useEffect(() => {
@@ -22,20 +21,20 @@ function Dashboard() {
       
       try {
         // Use Promise.all to fetch data in parallel
-        const [threatLogsResponse, riskScoresResponse, alertsResponse] = await Promise.all([
-          fetch('http://localhost:5001/api/threat-logs', {
+        const [threatLogsResponse, alertsResponse] = await Promise.all([
+          fetch('http://localhost:5002/api/spiderfoot/threat-logs', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
             }
           }),
-          fetch('http://localhost:5001/api/risk-scores', {
+          fetch('http://localhost:5002/api/risk-scores', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json'
             }
           }),
-          fetch('http://localhost:5001/api/real-time-alerts', {
+          fetch('http://localhost:5002/api/real-time-alerts', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json'
@@ -47,37 +46,55 @@ function Dashboard() {
         if (!threatLogsResponse.ok) {
           throw new Error(`Threat logs API failed with status: ${threatLogsResponse.status}`);
         }
-        if (!riskScoresResponse.ok) {
-          throw new Error(`Risk scores API failed with status: ${riskScoresResponse.status}`);
-        }
         if (!alertsResponse.ok) {
           throw new Error(`Alerts API failed with status: ${alertsResponse.status}`);
         }
 
         // Parse the JSON responses
         const threatLogsData = await threatLogsResponse.json();
-        const riskScoresData = await riskScoresResponse.json();
         const alertsData = await alertsResponse.json();
+        console.log('Threat Logs Data:', threatLogsData); // Log the threat logs data for debugging
+        console.log('Alerts Data:', alertsData); // Log the alerts data for debugging
+        if (!Array.isArray(alertsData)) {
+            setRealTimeAlerts([]); // Set to empty array if not valid
+        } else {
+            setRealTimeAlerts(alertsData); // Set alerts data if valid
+        }
 
         // Update state with the data
         setThreatLogs(threatLogsData);
-        setRiskScores(riskScoresData);
         setRealTimeAlerts(alertsData);
         
         // Analyze the data
         analyzeThreatLogs(threatLogsData);
-        analyzeRiskScores(riskScoresData);
         analyzeAlerts(alertsData);
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(error.message);
+        // Fallback to hardcoded data
+        setThreatLogs([
+          'Hardcoded Threat Log 1',
+          'Hardcoded Threat Log 2',
+          'Hardcoded Threat Log 3'
+        ]);
+        setRealTimeAlerts([
+          'Hardcoded Alert 1',
+          'Hardcoded Alert 2'
+        ]);
+        // Calculate average risk score
+        const avg = riskScores.reduce((sum, score) => sum + score, 0) / riskScores.length;
+        setAverageRiskScore(avg.toFixed(1));
+        
+        // Count high risk items
+        const highRisks = riskScores.filter(score => score > 80).length;
+        setHighRiskCount(highRisks);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, [riskScores]);
 
   // Analyze threat logs to categorize by type
   const analyzeThreatLogs = (logs) => {
@@ -103,45 +120,58 @@ function Dashboard() {
     setThreatCategories(categories);
   };
   
-  // Analyze risk scores
-  const analyzeRiskScores = (scores) => {
-    if (scores.length === 0) return;
-    
-    const avg = scores.reduce((sum, score) => sum + score, 0) / scores.length;
-    setAverageRiskScore(avg.toFixed(1));
-    
-    const highRisks = scores.filter(score => score > 80).length;
-    setHighRiskCount(highRisks);
-  };
-  
   // Analyze alerts by type
   const analyzeAlerts = (alerts) => {
-    const types = {
-      'Suspicious login': 0,
-      'Malware': 0,
-      'Unusual traffic': 0,
-      'Other': 0
-    };
-    
-    alerts.forEach(alert => {
-      if (alert.includes('Suspicious login')) {
-        types['Suspicious login']++;
-      } else if (alert.includes('malware')) {
-        types['Malware']++;
-      } else if (alert.includes('traffic')) {
-        types['Unusual traffic']++;
-      } else {
-        types['Other']++;
+      if (typeof alerts !== 'object' || !Array.isArray(alerts)) {
+          console.error('Expected alerts to be an array, received:', alerts);
+          return;
       }
-    });
-    
-    setAlertsByType(types);
+
+  const types = {
+    'Suspicious login': 0,
+    'Malware': 0,
+    'Unusual traffic': 0,
+    'Other': 0
   };
+  
+  alerts.forEach(alert => {
+    if (alert.includes('Suspicious login')) {
+      types['Suspicious login']++;
+    } else if (alert.includes('malware')) {
+      types['Malware']++;
+    } else if (alert.includes('traffic')) {
+      types['Unusual traffic']++;
+    } else {
+      types['Other']++;
+    }
+  });
+  
+  setAlertsByType(types);
+};
 
   // Filter threat logs based on selected threat type
-  const filteredThreatLogs = selectedThreat === 'All'
-    ? threatLogs
+  const filteredThreatLogs = selectedThreat === 'All' 
+    ? threatLogs 
     : threatLogs.filter(log => log.includes(selectedThreat));
+    
+  useEffect(() => {
+    if (riskScores.length > 0) {
+      const avg = riskScores.reduce((sum, score) => sum + score, 0) / riskScores.length;
+      setAverageRiskScore(avg.toFixed(1));
+      const highRisks = riskScores.filter(score => score > 80).length;
+      setHighRiskCount(highRisks);
+    }
+  }, [riskScores, selectedThreat]);
+    
+  // Calculate average risk score and high risk count if riskScores are available
+  useEffect(() => {
+    if (riskScores.length > 0) {
+      const avg = riskScores.reduce((sum, score) => sum + score, 0) / riskScores.length;
+      setAverageRiskScore(avg.toFixed(1));
+      const highRisks = riskScores.filter(score => score > 80).length;
+      setHighRiskCount(highRisks);
+    }
+  }, [riskScores]);
 
   return (
     <div className="dashboard-container">
@@ -172,14 +202,11 @@ function Dashboard() {
             
             <div className="summary-card">
               <h3>Risk Assessment</h3>
-              <p className="summary-number">{averageRiskScore}</p>
+              <p className="summary-number">N/A</p>
               <div className="risk-indicator" 
                    style={{
-                     backgroundColor: averageRiskScore > 80 ? 'red' : 
-                                     averageRiskScore > 60 ? 'orange' : 'green'
+                     backgroundColor: 'gray'
                    }}>
-                {averageRiskScore > 80 ? 'HIGH' : 
-                 averageRiskScore > 60 ? 'MEDIUM' : 'LOW'}
               </div>
               <div>High risk items: {highRiskCount}</div>
             </div>

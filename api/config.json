@@ -1,5 +1,3 @@
 {
-    "ZOOMEYE_API_KEY": "C761b15A-CE18-9Fd41-c6bC-b25fc9a0cdd",
-    "INTELX_API_KEY": "167bc8a3-4d7d-4ed6-9568-166e08c1ffbe",
-    "URLSCAN_API_KEY": "01958154-843d-7001-88cb-dec246e3e72c"
+    "SPIDERFOOT_API_KEY": "your_spiderfoot_api_key_here"
 }
