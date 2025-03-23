@@ -1,39 +1,43 @@
 # src/api/risk_analysis.py
+from transformers import pipeline
+import logging
 
-def calculate_risk(likelihood, impact):
-    """Calculate risk score based on likelihood and impact."""
-    return likelihood * impact
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('risk_analysis')
 
-def gpt_simulation(threat_description, risk_score):
-    """Simulate GPT-based risk scoring logic."""
-    # Placeholder logic for GPT-based refinement
-    # In a real implementation, you would call the GPT API here
-    return risk_score  # Return the original score for now
+classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased")
 
-def analyze_risk(threats):
-    """Analyze risks based on threat data."""
+def analyze_risk(threat_descriptions):
+    """Analyze risk scores using an LLM for text classification."""
+    if not threat_descriptions:
+        logger.warning("No threat descriptions provided, returning default scores.")
+        return [50, 75, 90]
+
     risk_scores = []
-    
-    for threat in threats:
-        # Assign default likelihood and impact based on threat description
-        likelihood = 1  # Default value
-        impact = 1  # Default value
-        
-        # Example logic to assign likelihood and impact based on threat description
-        if "SQL Injection" in threat:
-            likelihood = 4
-            impact = 5
-        elif "Phishing" in threat:
-            likelihood = 5
-            impact = 3
-        
-        # Calculate risk score
-        risk_score = calculate_risk(likelihood, impact)
-        
-        risk_scores.append({
-            "threat": threat,
-            "risk_score": risk_score
-        })
+    for desc in threat_descriptions:
+        try:
+            result = classifier(desc)[0]
+            label = result['label']
+            confidence = result['score']
 
-    
+            if label == "NEGATIVE":
+                risk_score = int(100 * confidence)
+            else:
+                risk_score = int(50 * (1 - confidence))
+
+            risk_scores.append(min(max(risk_score, 0), 100))
+        except Exception as e:
+            logger.error(f"Error analyzing risk for '{desc}': {str(e)}")
+            risk_scores.append(50)
+
+    logger.info(f"Generated risk scores: {risk_scores}")
     return risk_scores
+
+def analyze_trends(threat_data):
+    """Analyze trends in threat data."""
+    if not threat_data:
+        return {"trend": "none", "count": 0}
+    
+    high_risk_count = sum(1 for threat in threat_data if threat.get("risk") in ["high", "medium"])
+    trend = "increasing" if high_risk_count > len(threat_data) / 2 else "stable"
+    return {"trend": trend, "count": len(threat_data)}

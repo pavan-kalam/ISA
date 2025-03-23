@@ -1,13 +1,9 @@
+# api/logger.py
 import logging
 
-def setup_logger():
-    """Set up the logger for the application."""
-    logger = logging.getLogger('osint_fetcher')
-    logger.setLevel(logging.INFO)
-    handler = logging.StreamHandler()
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
-    return logger
+logger = logging.getLogger('app')
+logger.setLevel(logging.INFO)
 
-logger = setup_logger()
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)

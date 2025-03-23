@@ -5,15 +5,14 @@ import os
 import logging
 import time
 from datetime import datetime
-import requests
 from dotenv import load_dotenv
 from apscheduler.schedulers.background import BackgroundScheduler
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
-
-# Import Spiderfoot API module
-from .spiderfoot import fetch_spiderfoot_data  # New import for Spiderfoot
+from api.spiderfoot import fetch_spiderfoot_data
+from src.api.risk_analysis import analyze_trends, analyze_risk
+from api.models import db, ThreatData, TvaMapping
 
 # Load environment variables from .env file
 load_dotenv()
@@ -33,7 +32,7 @@ logger = logging.getLogger('osint_fetcher')
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://shopsmart:123456789@localhost:5432/shopsmart')
 
 # API Keys
-SPIDERFOOT_API_KEY = os.getenv('SPIDERFOOT_API_KEY')  # New Spiderfoot API key
+SPIDERFOOT_API_KEY = os.getenv('SPIDERFOOT_API_KEY')
 
 # Fetch interval in seconds (default: 1 hour)
 FETCH_INTERVAL = int(os.getenv('FETCH_INTERVAL', 3600))
@@ -56,7 +55,7 @@ def fetch_spiderfoot_intelligence(query):
     
     try:
         data = fetch_spiderfoot_data(SPIDERFOOT_API_KEY, query)
-        if 'error' in data:
+        if isinstance(data, dict) and 'error' in data:
             logger.error(f"Error from Spiderfoot: {data['error']}")
             return [{"description": "Default threat description from Spiderfoot", "risk": "low"}]
         return data
@@ -64,34 +63,87 @@ def fetch_spiderfoot_intelligence(query):
         logger.error(f"Error fetching Spiderfoot data: {str(e)}")
         return [{"description": "Default threat description from Spiderfoot", "risk": "high"}]
 
-
-
 def process_threat_data(data, source):
-    """Process the threat data based on the source."""
+    """Process the threat data and determine threat type."""
     processed_data = []
     for item in data:
-        if isinstance(item, dict):  # Ensure item is a dictionary
-            if source == 'zoomeye':
+        if isinstance(item, dict):
+            if source == 'spiderfoot':
+                description = item.get("description", "No description available")
+                threat_type = "Other"
+                if "malware" in description.lower():
+                    threat_type = "Malware"
+                elif "phishing" in description.lower():
+                    threat_type = "Phishing"
+                elif "ip" in description.lower():
+                    threat_type = "IP"
                 processed_data.append({
-                    "description": item.get("description", "No description available"),
-                    "risk": item.get("risk", "unknown")
-                })
-            elif source == 'abuseipdb':
-                processed_data.append({
-                    "description": item.get("data", {}).get("abuseConfidenceScore", "No score available"),
-                    "risk": "high" if item.get("data", {}).get("abuseConfidenceScore", 0) > 50 else "low"
+                    "description": description,
+                    "risk": item.get("risk", "unknown"),
+                    "threat_type": threat_type
                 })
         else:
             logger.warning(f"Expected a dictionary but got a {type(item).__name__}: {item}")
-        # Add more processing logic for other sources as needed
     return processed_data
 
+def save_threat_data(threats):
+    """Save processed threat data to the database and update tva_mapping."""
+    session = get_db_session()
+    if not session:
+        logger.error("Failed to save threat data: No database session.")
+        return
+
+    try:
+        descriptions = [threat["description"] for threat in threats]
+        risk_scores = analyze_risk(descriptions)
+
+        for threat, risk_score in zip(threats, risk_scores):
+            # Save to threat_data
+            threat_entry = ThreatData(
+                threat_type=threat["threat_type"],
+                description=threat["description"],
+                risk_score=risk_score
+            )
+            session.add(threat_entry)
+
+            # Check if this threat type exists in tva_mapping; if not, add it
+            existing_mapping = session.query(TvaMapping).filter_by(threat_name=threat["threat_type"]).first()
+            if not existing_mapping:
+                new_mapping = TvaMapping(
+                    asset_id=0,
+                    description=f"Threat: {threat['description']}",
+                    threat_name=threat["threat_type"],
+                    likelihood=1,
+                    impact=1
+                )
+                session.add(new_mapping)
+
+        session.commit()
+        logger.info(f"Saved {len(threats)} threats to the database.")
+    except SQLAlchemyError as e:
+        session.rollback()
+        logger.error(f"Failed to save threat data: {str(e)}")
+    finally:
+        session.close()
+
+def update_tva_mapping():
+    """Execute the TVA update SQL script."""
+    engine = create_engine(DATABASE_URL)
+    try:
+        with engine.connect() as connection:
+            with open('db/tva_update.sql', 'r') as file:
+                sql_script = file.read()
+            connection.exec_driver_sql(sql_script)
+            connection.commit()
+            logger.info("Successfully updated TVA mapping.")
+    except Exception as e:
+        logger.error(f"Failed to update TVA mapping: {str(e)}")
+
 def fetch_osint_data():
-    """Fetch OSINT data from multiple sources and return a unified structure."""    
+    """Fetch OSINT data from multiple sources and return a unified structure."""
     logger.info("Starting OSINT data fetch...")
     all_threats = []
     
-    # Example queries for Spiderfoot
     spiderfoot_queries = [
         'org:"ShopSmart Solutions"',
         'port:27017 mongodb',
@@ -103,43 +155,53 @@ def fetch_osint_data():
         spiderfoot_data = fetch_spiderfoot_intelligence(query)
         if spiderfoot_data:
             threats = process_threat_data(spiderfoot_data, 'spiderfoot')
+            # Fetch created_at for each threat
+            for threat in threats:
+                threat_entry = ThreatData.query.filter_by(description=threat['description']).order_by(ThreatData.created_at.desc()).first()
+                threat['created_at'] = threat_entry.created_at if threat_entry else datetime.now()
             all_threats.extend(threats)
-            logger.info(f"Processed threats from Spiderfoot")
+            logger.info(f"Processed threats from Spiderfoot for query: {query}")
         else:
-            logger.warning("No data received from Spiderfoot, using default data.")
-            all_threats.append({"description": "Default threat description from Spiderfoot", "risk": "high"})
+            logger.warning(f"No data received from Spiderfoot for query: {query}")
+            all_threats.append({
+                "description": "Default threat description from Spiderfoot",
+                "risk": "high",
+                "threat_type": "Other",
+                "created_at": datetime.now()
+            })
 
+    # Save threats to the database and update tva_mapping
+    save_threat_data(all_threats)
 
+    # Update TVA mapping
+    update_tva_mapping()
 
-    # Remove the default data section as it's no longer relevant
+    # Analyze trends
+    trends = analyze_trends(all_threats)
+    logger.info(f"Threat trends: {trends}")
 
-    return {"events": all_threats}
+    return {"events": all_threats, "trends": trends}
 
 def main():
     """Main entry point with scheduler setup"""
     logger.info("Starting OSINT Threat Intelligence Fetcher")
     
-    # Test database connection
     session = get_db_session()
     if not session:
         logger.error("Failed to establish database connection. Exiting.")
         return
     session.close()
     
-    # Create a scheduler
     scheduler = BackgroundScheduler()
-    
-    # Schedule the job to run at the specified interval
     scheduler.add_job(
         fetch_osint_data,
         'interval',
         seconds=FETCH_INTERVAL,
-        next_run_time=datetime.now()  # Run immediately on start
+        next_run_time=datetime.now()
     )
     
     try:
         scheduler.start()
-        # Keep the script running
         while True:
             time.sleep(60)
     except (KeyboardInterrupt, SystemExit):
