@@ -31,9 +31,6 @@ logger = logging.getLogger('osint_fetcher')
 # Database configuration
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://shopsmart:123456789@localhost:5432/shopsmart')
 
-# API Keys
-SPIDERFOOT_API_KEY = os.getenv('SPIDERFOOT_API_KEY')
-
 # Fetch interval in seconds (default: 1 hour)
 FETCH_INTERVAL = int(os.getenv('FETCH_INTERVAL', 3600))
 
@@ -48,20 +45,15 @@ def get_db_session():
         return None
 
 def fetch_spiderfoot_intelligence(query):
-    """Fetch threat intelligence from Spiderfoot"""
-    if not SPIDERFOOT_API_KEY:
-        logger.error("Spiderfoot API key not configured")
-        return [{"description": "Default threat description from Spiderfoot", "risk": "low"}]
-    
+    """Fetch threat intelligence from SpiderFoot CLI"""
     try:
-        data = fetch_spiderfoot_data(SPIDERFOOT_API_KEY, query)
-        if isinstance(data, dict) and 'error' in data:
-            logger.error(f"Error from Spiderfoot: {data['error']}")
-            return [{"description": "Default threat description from Spiderfoot", "risk": "low"}]
+        data = fetch_spiderfoot_data(query)
+        if not data or len(data) == 0:
+            logger.warning(f"No data returned for query: {query}")
         return data
     except Exception as e:
-        logger.error(f"Error fetching Spiderfoot data: {str(e)}")
-        return [{"description": "Default threat description from Spiderfoot", "risk": "high"}]
+        logger.error(f"Error fetching SpiderFoot data: {str(e)}")
+        return [{"description": "Default threat description from SpiderFoot", "risk": "high"}]
 
 def process_threat_data(data, source):
     """Process the threat data and determine threat type."""
@@ -143,28 +135,29 @@ def fetch_osint_data():
     """Fetch OSINT data from multiple sources and return a unified structure."""
     logger.info("Starting OSINT data fetch...")
     all_threats = []
-    
+
     spiderfoot_queries = [
-        'org:"ShopSmart Solutions"',
+        'localhost:5002',  # Flask API
+        'localhost:3000',  # React frontend
         'port:27017 mongodb',
         'port:3306 mysql',
         'http.title:"admin" login'
     ]
-    
+
     for query in spiderfoot_queries:
         spiderfoot_data = fetch_spiderfoot_intelligence(query)
         if spiderfoot_data:
             threats = process_threat_data(spiderfoot_data, 'spiderfoot')
-            # Fetch created_at for each threat
+            logger.info(f"Raw threats for query {query}: {threats}")
             for threat in threats:
                 threat_entry = ThreatData.query.filter_by(description=threat['description']).order_by(ThreatData.created_at.desc()).first()
                 threat['created_at'] = threat_entry.created_at if threat_entry else datetime.now()
             all_threats.extend(threats)
-            logger.info(f"Processed threats from Spiderfoot for query: {query}")
+            logger.info(f"Processed threats from SpiderFoot for query: {query}")
         else:
-            logger.warning(f"No data received from Spiderfoot for query: {query}")
+            logger.warning(f"No data received from SpiderFoot for query: {query}")
             all_threats.append({
-                "description": "Default threat description from Spiderfoot",
+                "description": "Default threat description from SpiderFoot",
                 "risk": "high",
                 "threat_type": "Other",
                 "created_at": datetime.now()
@@ -185,13 +178,13 @@ def fetch_osint_data():
 def main():
     """Main entry point with scheduler setup"""
     logger.info("Starting OSINT Threat Intelligence Fetcher")
-    
+
     session = get_db_session()
     if not session:
         logger.error("Failed to establish database connection. Exiting.")
         return
     session.close()
-    
+
     scheduler = BackgroundScheduler()
     scheduler.add_job(
         fetch_osint_data,
@@ -199,7 +192,7 @@ def main():
         seconds=FETCH_INTERVAL,
         next_run_time=datetime.now()
     )
-    
+
     try:
         scheduler.start()
         while True:

@@ -75,7 +75,7 @@ def get_threat_logs():
         start_time = time()
         osint_data = fetch_osint_data()
         logger.info(f"fetch_osint_data took {time() - start_time:.2f} seconds")
-        
+
         if not isinstance(osint_data, dict) or 'events' not in osint_data:
             logger.error("Invalid OSINT data structure received.")
             return jsonify({"error": "Invalid OSINT data structure."}), 500
@@ -83,7 +83,7 @@ def get_threat_logs():
         events = osint_data['events']
         threat_descriptions = [event["description"] for event in events]
         risk_scores = analyze_risk(threat_descriptions)
-        
+
         # Fetch TVA mappings
         tva_mappings = [
             {
