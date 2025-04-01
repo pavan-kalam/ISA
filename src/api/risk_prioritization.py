@@ -1,10 +1,19 @@
 # src/api/risk_prioritization.py
-import logging
+from custom_logging import setup_logger
+logger = setup_logger('risk_prioritization')
 from datetime import datetime
+import logging
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger('risk_prioritization')
+# # Configure logging
+# logging.basicConfig(
+#     level=logging.INFO,
+#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+#     handlers=[
+#         logging.FileHandler('risk_prioritization.log'),
+#         logging.StreamHandler()
+#     ]
+# )
+# logger = logging.getLogger('risk_prioritization')
 
 class RiskPrioritizer:
     def __init__(self, weights=None):
@@ -15,16 +24,24 @@ class RiskPrioritizer:
             'impact': 0.2,      # 20% weight
             'recency': 0.1      # 10% weight (how recent the threat is)
         }
+        # Validate weights
+        total_weight = sum(self.weights.values())
+        if not abs(total_weight - 1.0) < 0.0001:  # Allow for small floating-point errors
+            logger.warning(f"Total weights sum to {total_weight}, normalizing to 1.0")
+            for key in self.weights:
+                self.weights[key] /= total_weight
 
     def calculate_priority_score(self, threat, tva_mapping=None, current_time=None):
         """
         Calculate a priority score for a threat.
+
         Args:
-            threat (dict): Threat data with 'risk_score', 'threat_type', 'created_at'
-            tva_mapping (dict): TVA mapping with 'likelihood', 'impact' for the threat type
-            current_time (datetime): Current time for recency calculation
+            threat (dict): Threat data with 'risk_score', 'threat_type', 'created_at'.
+            tva_mapping (dict): TVA mapping with 'likelihood', 'impact' for the threat type.
+            current_time (datetime): Current time for recency calculation.
+
         Returns:
-            float: Priority score (0-100)
+            float: Priority score (0-100).
         """
         try:
             # Extract risk score (0-100)
@@ -69,12 +86,14 @@ class RiskPrioritizer:
     def prioritize_threats(self, threats, tva_mappings, current_time=None):
         """
         Prioritize a list of threats.
+
         Args:
-            threats (list): List of threat dictionaries
-            tva_mappings (list): List of TVA mappings with 'threat_name', 'likelihood', 'impact'
-            current_time (datetime): Current time for recency calculation
+            threats (list): List of threat dictionaries.
+            tva_mappings (list): List of TVA mappings with 'threat_name', 'likelihood', 'impact'.
+            current_time (datetime): Current time for recency calculation.
+
         Returns:
-            list: Sorted list of threats with priority scores
+            list: Sorted list of threats with priority scores.
         """
         # Create a lookup dictionary for tva_mappings
         tva_lookup = {mapping['threat_name']: mapping for mapping in tva_mappings}
@@ -90,4 +109,5 @@ class RiskPrioritizer:
 
         # Sort threats by priority score (descending)
         prioritized_threats.sort(key=lambda x: x['priority_score'], reverse=True)
+        logger.info(f"Prioritized {len(prioritized_threats)} threats based on risk scores and TVA mappings")
         return prioritized_threats

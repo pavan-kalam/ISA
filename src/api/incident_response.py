@@ -1,94 +1,107 @@
 # src/api/incident_response.py
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from api.models import db, IncidentLog
+from custom_logging import setup_logger
+logger = setup_logger('incident_response')
+from datetime import datetime
 import logging
-from src.api.mitigation_recommendations import MitigationRecommender
+# logging.basicConfig(level=logging.INFO)
+# logger = logging.getLogger('incident_response')
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger('incident_response')
+DATABASE_URL = 'postgresql://shopsmart:123456789@localhost:5432/shopsmart'
+
+def get_db_session():
+    try:
+        engine = create_engine(DATABASE_URL)
+        Session = sessionmaker(bind=engine)
+        return Session()
+    except Exception as e:
+        logger.error(f"Database connection error: {e}")
+        return None
 
 class IncidentResponder:
     def __init__(self):
-        self.mitigation_recommender = MitigationRecommender()
-        # Define incident response playbooks for each threat type
-        self.playbooks = {
-            'Phishing': {
-                'steps': [
-                    "Identify and isolate affected users.",
-                    "Reset credentials for compromised accounts.",
-                    "Analyze phishing email for IOCs (e.g., URLs, attachments).",
-                    "Report the incident to the security team and update threat intelligence."
-                ],
-                'priority': "High"
+        self.response_plans = {
+            "SQL Injection": {
+                "Preparation": "Ensure IDS/IPS rules detect SQL injection attempts.",
+                "Detection and Analysis": "Analyze logs for SQL injection patterns.",
+                "Containment": "Block the attacking IP.",
+                "Eradication": "Patch the vulnerability in the application.",
+                "Recovery": "Restore affected systems from backups.",
+                "Post-Incident": "Conduct forensic analysis and update security policies."
             },
-            'Malware': {
-                'steps': [
-                    "Isolate the infected system from the network.",
-                    "Collect forensic evidence (e.g., memory dumps, logs).",
-                    "Eradicate the malware using antivirus tools.",
-                    "Restore the system from a clean backup."
-                ],
-                'priority': "Critical"
+            "Phishing": {
+                "Preparation": "Train users on phishing awareness.",
+                "Detection and Analysis": "Identify phishing emails via filters.",
+                "Containment": "Notify affected users.",
+                "Eradication": "Change compromised credentials.",
+                "Recovery": "Update phishing filters.",
+                "Post-Incident": "Review incident for training improvements."
             },
-            'IP': {
-                'steps': [
-                    "Block the IP address at the firewall and monitor for further activity.",
-                    "Trace the IP to identify the source (e.g., geolocation, WHOIS).",
-                    "Review logs for other systems accessed by the IP.",
-                    "Update security policies to prevent future access."
-                ],
-                'priority': "Medium"
+            "DDoS Attack": {
+                "Preparation": "Set up DDoS mitigation services.",
+                "Detection and Analysis": "Monitor traffic for anomalies.",
+                "Containment": "Activate DDoS mitigation.",
+                "Eradication": "Enable rate limiting.",
+                "Recovery": "Monitor ongoing traffic.",
+                "Post-Incident": "Analyze attack source and improve defenses."
             },
-            'Other': {
-                'steps': [
-                    "Escalate the incident to the security team for investigation.",
-                    "Collect and preserve evidence for forensic analysis.",
-                    "Monitor systems for additional suspicious activity.",
-                    "Document the incident and lessons learned."
-                ],
-                'priority': "Medium"
+            "Default threat": {
+                "Preparation": "Prepare generic security measures.",
+                "Detection and Analysis": "Analyze threat data.",
+                "Containment": "Contain the threat.",
+                "Eradication": "Remove the threat.",
+                "Recovery": "Recover systems.",
+                "Post-Incident": "Review and improve processes."
             }
         }
 
-    def generate_response_plan(self, threat):
-        """
-        Generate an incident response plan for a threat.
-        Args:
-            threat (dict): Threat data with 'threat_type', 'description', 'priority_score'
-        Returns:
-            dict: Response plan with mitigation strategies and playbook steps
-        """
+    def generate_response_plan(self, threat_info):
+        threat_desc = threat_info.get('description', 'Unknown Threat').strip().lower()
+        plan = self.response_plans.get(threat_desc.title(), None)
+        if not plan:
+            if "sql" in threat_desc or "injection" in threat_desc:
+                plan = self.response_plans["SQL Injection"]
+            elif "phish" in threat_desc:
+                plan = self.response_plans["Phishing"]
+            elif "ddos" in threat_desc or "denial" in threat_desc:
+                plan = self.response_plans["DDoS Attack"]
+            else:
+                plan = self.response_plans["Default threat"]
+
+        response_plan = {
+            "threat_type": threat_info.get('threat_type', 'Other'),
+            "description": threat_desc,
+            "priority": "High" if threat_info.get('risk_score', 0) > 20 else "Medium",
+            "mitigation_strategies": list(plan.values()),
+            "response_steps": [f"{phase}: {action}" for phase, action in plan.items()]
+        }
+        self.log_incident(threat_info, response_plan)
+        return response_plan
+
+    def log_incident(self, threat_info, response_plan):
+        session = get_db_session()
+        if not session:
+            return
         try:
-            threat_type = threat.get('threat_type', 'Other')
-            priority_score = threat.get('priority_score', 50)
-
-            # Get mitigation recommendations
-            mitigations = self.mitigation_recommender.get_recommendations(threat_type)
-
-            # Get playbook for the threat type
-            playbook = self.playbooks.get(threat_type, self.playbooks['Other'])
-
-            # Adjust priority based on priority score
-            if priority_score > 80:
-                playbook['priority'] = "Critical"
-            elif priority_score > 50:
-                playbook['priority'] = "High"
-
-            response_plan = {
-                'threat_type': threat_type,
-                'description': threat.get('description', 'No description available'),
-                'priority': playbook['priority'],
-                'mitigation_strategies': mitigations,
-                'response_steps': playbook['steps']
-            }
-
-            logger.info(f"Generated response plan for {threat_type}: {response_plan}")
-            return response_plan
+            incident_log = IncidentLog(
+                threat_type=threat_info.get('threat_type', 'Other'),
+                description=threat_info.get('description', 'Unknown Threat'),
+                response_plan=str(response_plan),
+                risk_score=threat_info.get('risk_score', 0)
+            )
+            session.add(incident_log)
+            session.commit()
+            logger.info(f"Logged incident: {threat_info['description']}")
         except Exception as e:
-            logger.error(f"Error generating response plan: {str(e)}")
-            return {
-                'threat_type': 'Unknown',
-                'description': 'Error generating response plan',
-                'priority': 'Medium',
-                'mitigation_strategies': ["Investigate the issue and consult a security expert."],
-                'response_steps': ["Escalate to the security team."]
-            }
+            session.rollback()
+            logger.error(f"Failed to log incident: {e}")
+        finally:
+            session.close()
+
+if __name__ == "__main__":
+    responder = IncidentResponder()
+    threat = {"description": "SQL Injection attempt detected", "risk_score": 25, "threat_type": "Injection"}
+    response = responder.generate_response_plan(threat)
+    print(f"Incident Response Plan: {response}")

@@ -1,0 +1,288 @@
+2025-04-01 02:26:53,831 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 02:26:55,920 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 02:27:04,364 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 02:27:05,545 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 02:27:23,010 - app - INFO - User logged in: pavank@gmail.com
+2025-04-01 02:27:23,030 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:27:23,042 - app - INFO - Fetched 25 assets
+2025-04-01 02:27:23,047 - app - INFO - Fetched 25 assets
+2025-04-01 02:27:23,073 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:27:23,213 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 02:27:29,782 - app - INFO - get_threat_data for query 'localhost:5002' took 6.75 seconds
+2025-04-01 02:27:32,017 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 02:27:35,938 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 02:27:36,919 - app - INFO - Risk scores for query 'localhost:5002': [75, 50, 50]
+2025-04-01 02:27:41,111 - app - INFO - get_threat_data for query 'localhost:5002' took 5.17 seconds
+2025-04-01 02:27:43,121 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:27:43,199 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:27:43,201 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 02:27:45,033 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 02:27:49,338 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 02:28:00,288 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 02:30:14,348 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:30:14,400 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:30:14,401 - app - INFO - Fetched 25 assets
+2025-04-01 02:30:14,405 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 02:30:20,125 - app - INFO - get_threat_data for query 'Development Workstations' took 5.78 seconds
+2025-04-01 02:30:22,378 - app - INFO - Risk scores for query 'Development Workstations': [74, 50, 50]
+2025-04-01 02:30:22,440 - app - INFO - Inserted new threat into threat_data: Development Workstations
+2025-04-01 02:30:25,924 - app - INFO - Returning 1 threat logs for query 'Development Workstations'
+2025-04-01 02:30:35,796 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 02:34:15,230 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:34:15,281 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:34:15,287 - app - INFO - Fetched 25 assets
+2025-04-01 02:34:15,306 - app - INFO - Fetched 4 alerts from threat_data table
+2025-04-01 02:34:21,368 - app - INFO - get_threat_data for query 'Backup and Recovery' took 6.14 seconds
+2025-04-01 02:34:22,246 - app - INFO - Risk scores for query 'Backup and Recovery': [53, 50, 50]
+2025-04-01 02:34:22,280 - app - INFO - Inserted new threat into threat_data: Backup and Recovery
+2025-04-01 02:34:25,975 - app - INFO - Returning 1 threat logs for query 'Backup and Recovery'
+2025-04-01 02:34:40,776 - app - INFO - Returning 4 real-time alerts for query ''
+2025-04-01 02:36:13,619 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 02:36:14,779 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 02:36:33,217 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 02:36:34,530 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 02:37:11,154 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:37:11,705 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:37:11,715 - app - INFO - Fetched 5 alerts from threat_data table
+2025-04-01 02:37:17,962 - app - INFO - get_threat_data for query 'Backup and Recovery' took 6.81 seconds
+2025-04-01 02:37:19,553 - app - INFO - Risk scores for query 'Backup and Recovery': [53, 50, 50]
+2025-04-01 02:37:23,014 - app - INFO - Returning 1 threat logs for query 'Backup and Recovery'
+2025-04-01 02:37:40,743 - app - INFO - Returning 5 real-time alerts for query ''
+2025-04-01 02:38:35,413 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:38:35,589 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:38:35,631 - app - INFO - Fetched 25 assets
+2025-04-01 02:38:35,639 - app - INFO - Fetched 5 alerts from threat_data table
+2025-04-01 02:38:41,828 - app - INFO - get_threat_data for query 'Primary Application Server' took 6.42 seconds
+2025-04-01 02:38:43,812 - app - INFO - Risk scores for query 'Primary Application Server': [44, 50, 50]
+2025-04-01 02:38:43,851 - app - INFO - Inserted new threat into threat_data: Primary Application Server
+2025-04-01 02:38:43,941 - app - INFO - Returning 1 threat logs for query 'Primary Application Server'
+2025-04-01 02:39:06,604 - app - INFO - Returning 5 real-time alerts for query ''
+2025-04-01 02:40:03,924 - app - INFO - Starting real-time alerts fetch
+2025-04-01 02:40:04,360 - app - INFO - Fetched 25 assets
+2025-04-01 02:40:04,361 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 02:40:04,391 - app - INFO - Fetched 6 alerts from threat_data table
+2025-04-01 02:40:10,149 - app - INFO - get_threat_data for query 'Authentication Service' took 6.23 seconds
+2025-04-01 02:40:13,160 - app - INFO - Risk scores for query 'Authentication Service': [47, 50, 50]
+2025-04-01 02:40:13,206 - app - INFO - Inserted new threat into threat_data: Authentication Service
+2025-04-01 02:40:16,865 - app - INFO - Returning 1 threat logs for query 'Authentication Service'
+2025-04-01 02:40:42,446 - app - INFO - Returning 6 real-time alerts for query ''
+2025-04-01 03:12:40,343 - app - INFO - Report generated successfully: reports/threat_report.pdf
+2025-04-01 03:18:32,657 - app - INFO - Application is running on port 5002
+2025-04-01 03:18:32,940 - app - INFO - Application is running on port 5002
+2025-04-01 03:51:11,499 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 03:51:13,455 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 03:51:23,298 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 03:51:25,435 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 03:51:44,791 - app - INFO - User logged in: pavank@gmail.com
+2025-04-01 03:51:44,824 - app - INFO - Starting real-time alerts fetch
+2025-04-01 03:51:44,837 - app - INFO - Fetched 25 assets
+2025-04-01 03:51:44,845 - app - INFO - Fetched 25 assets
+2025-04-01 03:51:44,959 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 03:51:45,027 - app - INFO - Fetched 7 alerts from threat_data table
+2025-04-01 03:51:53,046 - app - INFO - get_threat_data for query 'localhost:5002' took 8.23 seconds
+2025-04-01 03:51:57,236 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 03:52:01,247 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 03:52:03,439 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 03:52:04,847 - app - INFO - Starting real-time alerts fetch
+2025-04-01 03:52:04,855 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 03:52:04,858 - app - INFO - Fetched 7 alerts from threat_data table
+2025-04-01 03:52:07,040 - app - INFO - get_threat_data for query 'localhost:5002' took 5.78 seconds
+2025-04-01 03:52:10,604 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 03:52:50,766 - app - INFO - Returning 7 real-time alerts for query ''
+2025-04-01 03:52:58,931 - app - INFO - Returning 7 real-time alerts for query ''
+2025-04-01 03:55:53,283 - app - ERROR - Periodic report generation failed: Command '['pg_dump', '-U', 'shopsmart', 'shopsmart', '-f', 'backups/shopsmart_20250401_085125.sql']' returned non-zero exit status 1.
+2025-04-01 04:05:47,991 - app - INFO - Application is running on port 5002
+2025-04-01 04:05:47,999 - app - ERROR - Periodic report generation failed: Command '['pg_dump', '-U', 'shopsmart', 'shopsmart', '-f', 'backups/shopsmart_20250401_085113.sql']' died with <Signals.SIGINT: 2>.
+2025-04-01 04:05:48,250 - app - INFO - Application is running on port 5002
+2025-04-01 04:06:01,413 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:06:02,644 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:06:02,745 - app - ERROR - Periodic report generation failed: [Errno 2] No such file or directory: 'pg_dump'
+2025-04-01 04:06:12,750 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:06:15,613 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:06:15,658 - app - ERROR - Periodic report generation failed: [Errno 2] No such file or directory: 'pg_dump'
+2025-04-01 04:07:03,443 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:07:04,429 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:07:26,076 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:07:28,145 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:07:37,863 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:07:40,025 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:09:50,660 - app - INFO - User logged in: pavank@gmail.com
+2025-04-01 04:09:50,680 - app - INFO - Fetched 25 assets
+2025-04-01 04:09:50,689 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:09:50,713 - app - INFO - Fetched 25 assets
+2025-04-01 04:09:50,875 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:09:50,880 - app - INFO - Fetched 0 alerts from threat_data table
+2025-04-01 04:09:50,880 - app - WARNING - No alerts matched query '', returning all alerts
+2025-04-01 04:09:50,880 - app - INFO - Returning 0 real-time alerts for query ''
+2025-04-01 04:09:50,883 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:09:50,884 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:09:50,885 - app - INFO - Fetched 0 alerts from threat_data table
+2025-04-01 04:09:50,885 - app - WARNING - No alerts matched query '', returning all alerts
+2025-04-01 04:09:50,885 - app - INFO - Returning 0 real-time alerts for query ''
+2025-04-01 04:09:57,304 - app - INFO - get_threat_data for query 'localhost:5002' took 6.62 seconds
+2025-04-01 04:10:00,393 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 04:10:00,435 - app - INFO - Inserted new threat into threat_data: localhost:5002
+2025-04-01 04:10:04,332 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:10:05,623 - app - INFO - Risk scores for query 'localhost:5002': [75, 50, 50]
+2025-04-01 04:10:08,838 - app - INFO - get_threat_data for query 'localhost:5002' took 4.50 seconds
+2025-04-01 04:10:13,017 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:11:35,386 - app - INFO - Fetched 25 assets
+2025-04-01 04:11:35,390 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:11:35,417 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:11:35,421 - app - INFO - Fetched 1 alerts from threat_data table
+2025-04-01 04:11:41,815 - app - INFO - get_threat_data for query 'Backup and Recovery' took 6.43 seconds
+2025-04-01 04:11:45,904 - app - INFO - Risk scores for query 'Backup and Recovery': [53, 50, 50]
+2025-04-01 04:11:46,065 - app - INFO - Inserted new threat into threat_data: Backup and Recovery
+2025-04-01 04:11:49,311 - app - INFO - Returning 1 threat logs for query 'Backup and Recovery'
+2025-04-01 04:11:53,489 - app - INFO - Returning 1 real-time alerts for query ''
+2025-04-01 04:12:14,207 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:12:14,616 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:12:14,623 - app - INFO - Fetched 2 alerts from threat_data table
+2025-04-01 04:12:20,391 - app - INFO - get_threat_data for query 'Backup and Recovery' took 6.19 seconds
+2025-04-01 04:12:23,744 - app - INFO - Risk scores for query 'Backup and Recovery': [53, 50, 50]
+2025-04-01 04:12:27,585 - app - INFO - Returning 1 threat logs for query 'Backup and Recovery'
+2025-04-01 04:12:32,274 - app - INFO - Returning 2 real-time alerts for query ''
+2025-04-01 04:13:30,889 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:13:32,849 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:14:24,238 - app - INFO - Report generated successfully: reports/threat_report.pdf
+2025-04-01 04:18:35,400 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:18:36,599 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:19:37,319 - app - INFO - User logged in: pavank@gmail.com
+2025-04-01 04:19:37,363 - app - INFO - Fetched 25 assets
+2025-04-01 04:19:37,370 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:19:37,392 - app - INFO - Fetched 25 assets
+2025-04-01 04:19:37,821 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:19:37,843 - app - INFO - Fetched 2 alerts from threat_data table
+2025-04-01 04:19:44,763 - app - INFO - get_threat_data for query 'localhost:5002' took 7.39 seconds
+2025-04-01 04:19:48,562 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 04:19:52,845 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:19:55,520 - app - INFO - Risk scores for query 'localhost:5002': [75, 50, 50]
+2025-04-01 04:19:57,433 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:19:58,348 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:19:58,356 - app - INFO - Fetched 2 alerts from threat_data table
+2025-04-01 04:19:59,913 - app - INFO - get_threat_data for query 'localhost:5002' took 7.06 seconds
+2025-04-01 04:20:04,142 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:20:12,074 - app - INFO - Returning 2 real-time alerts for query ''
+2025-04-01 04:20:27,030 - app - INFO - Returning 2 real-time alerts for query ''
+2025-04-01 04:22:10,258 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:22:11,398 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:22:11,398 - app - INFO - Launching report generation thread
+2025-04-01 04:22:11,398 - app - INFO - Starting periodic report generation thread
+2025-04-01 04:22:11,833 - app - INFO - Periodic report generated: reports/threat_report.pdf
+2025-04-01 04:22:36,092 - app - INFO - User logged in: pavank@gmail.com
+2025-04-01 04:22:36,141 - app - INFO - Fetched 25 assets
+2025-04-01 04:22:36,147 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:22:36,170 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:22:36,182 - app - INFO - Fetched 25 assets
+2025-04-01 04:22:36,185 - app - INFO - Fetched 2 alerts from threat_data table
+2025-04-01 04:22:45,340 - app - INFO - get_threat_data for query 'localhost:5002' took 9.19 seconds
+2025-04-01 04:22:49,379 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 04:22:52,979 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:22:56,178 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:22:56,615 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 04:22:56,668 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:22:56,676 - app - INFO - Fetched 2 alerts from threat_data table
+2025-04-01 04:22:59,916 - app - INFO - get_threat_data for query 'localhost:5002' took 6.93 seconds
+2025-04-01 04:23:04,474 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:23:09,289 - app - INFO - Returning 2 real-time alerts for query ''
+2025-04-01 04:23:13,505 - app - INFO - Returning 2 real-time alerts for query ''
+2025-04-01 04:23:44,527 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:23:44,711 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:23:44,712 - app - INFO - Fetched 25 assets
+2025-04-01 04:23:44,716 - app - INFO - Fetched 2 alerts from threat_data table
+2025-04-01 04:23:51,697 - app - INFO - get_threat_data for query 'PostgreSQL Database' took 7.17 seconds
+2025-04-01 04:23:56,088 - app - INFO - Risk scores for query 'PostgreSQL Database': [75, 50, 50]
+2025-04-01 04:23:56,451 - app - INFO - Inserted new threat into threat_data: PostgreSQL Database
+2025-04-01 04:24:03,856 - app - INFO - Returning 1 threat logs for query 'PostgreSQL Database'
+2025-04-01 04:24:23,239 - app - INFO - Returning 2 real-time alerts for query ''
+2025-04-01 04:24:33,089 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:24:33,764 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:24:33,769 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:24:40,642 - app - INFO - get_threat_data for query 'PostgreSQL Database' took 7.56 seconds
+2025-04-01 04:24:45,397 - app - INFO - Risk scores for query 'PostgreSQL Database': [75, 50, 50]
+2025-04-01 04:24:49,412 - app - INFO - Returning 1 threat logs for query 'PostgreSQL Database'
+2025-04-01 04:25:09,633 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:26:33,948 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:26:36,427 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:26:36,428 - app - INFO - Launching report generation thread
+2025-04-01 04:26:36,428 - app - INFO - Starting periodic report generation thread
+2025-04-01 04:26:36,450 - app - ERROR - Periodic report generation failed: [Errno 2] No such file or directory: 'pg_dump'
+Traceback (most recent call last):
+  File "/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py", line 1969, in generate_periodic_reports
+    backup_database()
+  File "/Users/pavankalam/Desktop/project updates1/project working/real-time-threat-intelligence/src/api/app.py", line 1959, in backup_database
+    subprocess.run([pg_dump_path, "-U", "shopsmart", "shopsmart", "-f", backup_path], check=True)
+  File "/opt/anaconda3/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/anaconda3/lib/python3.11/subprocess.py", line 1950, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pg_dump'
+2025-04-01 04:27:51,646 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:27:54,395 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:27:54,410 - app - INFO - Launching report generation thread
+2025-04-01 04:27:54,413 - app - INFO - Starting periodic report generation thread
+2025-04-01 04:27:55,213 - app - INFO - Periodic report generated: reports/threat_report.pdf
+2025-04-01 04:32:12,862 - app - INFO - User logged in: pavank@gmail.com
+2025-04-01 04:32:12,930 - app - INFO - Fetched 25 assets
+2025-04-01 04:32:12,933 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:32:12,953 - app - INFO - Fetched 25 assets
+2025-04-01 04:32:12,960 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:32:12,982 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:32:20,982 - app - INFO - get_threat_data for query 'localhost:5002' took 8.05 seconds
+2025-04-01 04:32:32,505 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 04:32:32,936 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:32:33,344 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:32:33,351 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:32:37,481 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:32:44,295 - app - INFO - Risk scores for query 'localhost:5002': [59, 50, 50]
+2025-04-01 04:32:45,295 - app - INFO - get_threat_data for query 'localhost:5002' took 7.81 seconds
+2025-04-01 04:32:49,399 - app - INFO - Returning 1 threat logs for query 'localhost:5002'
+2025-04-01 04:33:15,054 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:33:18,003 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:46:56,960 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:46:56,961 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:46:57,043 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:46:57,120 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:46:57,121 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:46:57,121 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:46:57,141 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:46:57,150 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:46:57,150 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:47:43,689 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:47:44,372 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:47:44,387 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:48:03,153 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:48:06,236 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:48:06,238 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:48:22,886 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:50:20,681 - app - INFO - Application is running on port 5002
+2025-04-01 04:50:20,999 - app - INFO - Application is running on port 5002
+2025-04-01 04:50:32,651 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:50:34,765 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:50:34,766 - app - INFO - Launching report generation thread
+2025-04-01 04:50:34,766 - app - INFO - Starting periodic report generation thread
+2025-04-01 04:50:35,265 - app - INFO - Periodic report generated: reports/threat_report.pdf
+2025-04-01 04:50:46,365 - app - INFO - Successfully initialized Hugging Face LLM for real-time alert analysis
+2025-04-01 04:50:49,084 - app - INFO - Successfully initialized Hugging Face text generation model (gpt2)
+2025-04-01 04:50:49,085 - app - INFO - Launching report generation thread
+2025-04-01 04:50:49,086 - app - INFO - Starting periodic report generation thread
+2025-04-01 04:50:50,630 - app - INFO - Periodic report generated: reports/threat_report.pdf
+2025-04-01 04:54:06,529 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:54:06,876 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:54:06,918 - app - INFO - Fetched 25 assets
+2025-04-01 04:54:06,989 - app - INFO - Fetched 3 alerts from threat_data table
+2025-04-01 04:54:15,482 - app - INFO - get_threat_data for query 'Payment Processing API' took 8.95 seconds
+2025-04-01 04:54:19,039 - app - INFO - Risk scores for query 'Payment Processing API': [50, 50, 50]
+2025-04-01 04:54:19,384 - app - INFO - Inserted new threat into threat_data: Payment Processing API
+2025-04-01 04:54:22,869 - app - INFO - Returning 1 threat logs for query 'Payment Processing API'
+2025-04-01 04:54:37,918 - app - INFO - Returning 3 real-time alerts for query ''
+2025-04-01 04:59:10,228 - app - INFO - Starting real-time alerts fetch
+2025-04-01 04:59:10,535 - app - INFO - Fetching real-time alerts for query: ''
+2025-04-01 04:59:10,594 - app - INFO - Fetched 4 alerts from threat_data table
+2025-04-01 04:59:18,120 - app - INFO - get_threat_data for query 'Payment Processing API' took 7.90 seconds
+2025-04-01 04:59:23,932 - app - INFO - Risk scores for query 'Payment Processing API': [50, 50, 50]
+2025-04-01 04:59:27,969 - app - INFO - Returning 1 threat logs for query 'Payment Processing API'
+2025-04-01 04:59:53,987 - app - INFO - Returning 4 real-time alerts for query ''

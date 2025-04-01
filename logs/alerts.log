@@ -1,0 +1,66 @@
+2025-04-01 02:27:35,320 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 02:27:35,784 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 02:27:35,858 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 02:27:44,548 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 02:27:44,989 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 02:27:45,006 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 02:30:25,495 - alerts - INFO - Email alert sent for Development Workstations
+2025-04-01 02:30:25,888 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 02:30:25,906 - alerts - INFO - New alert logged: Development Workstations
+2025-04-01 02:34:25,319 - alerts - INFO - Email alert sent for Backup and Recovery
+2025-04-01 02:34:25,892 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 02:34:25,922 - alerts - INFO - New alert logged: Backup and Recovery
+2025-04-01 02:37:22,587 - alerts - INFO - Email alert sent for Backup and Recovery
+2025-04-01 02:37:22,985 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 02:37:22,993 - alerts - INFO - New alert logged: Backup and Recovery
+2025-04-01 02:40:16,289 - alerts - INFO - Email alert sent for Authentication Service
+2025-04-01 02:40:16,788 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 02:40:16,813 - alerts - INFO - New alert logged: Authentication Service
+2025-04-01 03:52:00,714 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 03:52:01,203 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 03:52:01,219 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 03:52:10,133 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 03:52:10,538 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 03:52:10,555 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:10:03,760 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:10:04,219 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:10:04,244 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:10:12,535 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:10:12,952 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:10:12,993 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:11:48,774 - alerts - INFO - Email alert sent for Backup and Recovery
+2025-04-01 04:11:49,197 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:11:49,232 - alerts - INFO - New alert logged: Backup and Recovery
+2025-04-01 04:12:27,086 - alerts - INFO - Email alert sent for Backup and Recovery
+2025-04-01 04:12:27,551 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:12:27,561 - alerts - INFO - New alert logged: Backup and Recovery
+2025-04-01 04:19:51,919 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:19:52,524 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:19:52,776 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:20:03,588 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:20:04,009 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:20:04,044 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:22:52,296 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:22:52,732 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:22:52,851 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:23:03,812 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:23:04,344 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:23:04,399 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:23:59,110 - alerts - INFO - Email alert sent for PostgreSQL Database
+2025-04-01 04:23:59,593 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:24:01,718 - alerts - INFO - New alert logged: PostgreSQL Database
+2025-04-01 04:24:48,673 - alerts - INFO - Email alert sent for PostgreSQL Database
+2025-04-01 04:24:49,250 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:24:49,337 - alerts - INFO - New alert logged: PostgreSQL Database
+2025-04-01 04:32:36,437 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:32:37,066 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:32:37,344 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:32:48,736 - alerts - INFO - Email alert sent for localhost:5002
+2025-04-01 04:32:49,140 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:32:49,227 - alerts - INFO - New alert logged: localhost:5002
+2025-04-01 04:54:21,862 - alerts - INFO - Email alert sent for Payment Processing API
+2025-04-01 04:54:22,336 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:54:22,757 - alerts - INFO - New alert logged: Payment Processing API
+2025-04-01 04:59:27,228 - alerts - INFO - Email alert sent for Payment Processing API
+2025-04-01 04:59:27,709 - alerts - ERROR - Failed to send webhook alert: 429 Client Error: Too many requests for url: https://webhook.site/1e2c5f14-e46e-43c1-8209-500c4493b287
+2025-04-01 04:59:27,826 - alerts - INFO - New alert logged: Payment Processing API

@@ -1,0 +1,64 @@
+2025-04-01 02:26:50,149 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 02:27:00,236 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 02:27:32,011 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 02:27:32,011 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.59
+2025-04-01 02:27:36,918 - risk_scoring - INFO - Risk score for 'Error fetching SpiderFoot data for query 'localhost:5002': Expecting value: line 1 column 1 (char 0)': 75.94
+2025-04-01 02:27:41,487 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 02:30:22,376 - risk_scoring - INFO - Risk score for 'Development Workstations': 74.81
+2025-04-01 02:30:22,377 - risk_scoring - INFO - Risk score for 'Development Workstations': 50.82
+2025-04-01 02:34:22,244 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 29.14
+2025-04-01 02:34:22,244 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 53.14
+2025-04-01 02:36:09,526 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 02:36:30,071 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 02:37:19,546 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 29.14
+2025-04-01 02:37:19,547 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 53.14
+2025-04-01 02:38:43,812 - risk_scoring - INFO - Risk score for 'Primary Application Server': 44.94
+2025-04-01 02:38:43,812 - risk_scoring - INFO - Risk score for 'Primary Application Server': 20.94
+2025-04-01 02:40:13,157 - risk_scoring - INFO - Risk score for 'Authentication Service': 23.89
+2025-04-01 02:40:13,158 - risk_scoring - INFO - Risk score for 'Authentication Service': 47.89
+2025-04-01 03:51:07,290 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 03:51:19,038 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 03:51:57,230 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 03:51:57,231 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.58
+2025-04-01 03:52:03,438 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.59
+2025-04-01 03:52:07,421 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:05:57,266 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:06:07,447 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:06:59,429 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:07:22,319 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:07:32,829 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:10:00,390 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:10:00,390 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.59
+2025-04-01 04:10:05,623 - risk_scoring - INFO - Risk score for 'Error fetching SpiderFoot data for query 'localhost:5002': Expecting value: line 1 column 1 (char 0)': 75.94
+2025-04-01 04:10:09,241 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:11:45,903 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 53.14
+2025-04-01 04:11:45,903 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 29.14
+2025-04-01 04:12:23,717 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 29.14
+2025-04-01 04:12:23,718 - risk_scoring - INFO - Risk score for 'Backup and Recovery': 53.14
+2025-04-01 04:13:26,977 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:18:31,879 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:19:48,557 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:19:48,558 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.59
+2025-04-01 04:19:55,519 - risk_scoring - INFO - Risk score for 'Error fetching SpiderFoot data for query 'localhost:5002': Extra data: line 1 column 127 (char 126)': 75.94
+2025-04-01 04:20:00,667 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:22:06,780 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:22:49,373 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:22:49,373 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.58
+2025-04-01 04:22:56,614 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.59
+2025-04-01 04:23:01,024 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:23:56,077 - risk_scoring - INFO - Risk score for 'PostgreSQL Database': 51.21
+2025-04-01 04:23:56,077 - risk_scoring - INFO - Risk score for 'PostgreSQL Database': 75.21
+2025-04-01 04:24:45,393 - risk_scoring - INFO - Risk score for 'PostgreSQL Database': 75.21
+2025-04-01 04:24:45,395 - risk_scoring - INFO - Risk score for 'PostgreSQL Database': 51.21
+2025-04-01 04:26:30,314 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:27:47,989 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:32:32,487 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.58
+2025-04-01 04:32:32,488 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.58
+2025-04-01 04:32:44,293 - risk_scoring - INFO - Risk score for 'localhost:5002': 59.59
+2025-04-01 04:32:45,786 - risk_scoring - INFO - Risk score for 'localhost:5002': 35.59
+2025-04-01 04:50:28,975 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:50:41,054 - risk_scoring - INFO - Initialized sentiment analysis classifier
+2025-04-01 04:54:19,037 - risk_scoring - INFO - Risk score for 'Payment Processing API': 50.14
+2025-04-01 04:54:19,037 - risk_scoring - INFO - Risk score for 'Payment Processing API': 26.14
+2025-04-01 04:59:23,930 - risk_scoring - INFO - Risk score for 'Payment Processing API': 50.14
+2025-04-01 04:59:23,932 - risk_scoring - INFO - Risk score for 'Payment Processing API': 26.14

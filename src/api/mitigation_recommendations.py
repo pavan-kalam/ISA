@@ -1,9 +1,10 @@
 # src/api/mitigation_recommendations.py
-import logging
-
+# import logging
+from custom_logging import setup_logger
+logger = setup_logger('mitigation_recommendations')
 # Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger('mitigation_recommendations')
+# logging.basicConfig(level=logging.INFO)
+# logger = logging.getLogger('mitigation_recommendations')
 
 class MitigationRecommender:
     def __init__(self):
